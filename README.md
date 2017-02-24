@@ -1,6 +1,6 @@
 accounts-yunpian
 =============
-Allow users to login with their phone number.
+Allow users to login with their phone number smsgateway https://www.yunpian.com.
 
 ##Usage
 
