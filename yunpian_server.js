@@ -26,6 +26,7 @@ Accounts.yunpian.configure = function (options) {
     {
       yunpian: {
         apikey: String,
+        tpl_id: String
       }
     }, {
       lookup: MatchEx.Function(),
@@ -52,7 +53,7 @@ Accounts.yunpian.sendVerificationCode = function (phone) {
     throw new Meteor.Error('not a mobile number');
   }
 
-  var code = Math.floor(1000 + Math.random() * 9000) + '';
+  var code = Math.floor(100000 + Math.random() * 900000) + '';
 
   // Clear out existing codes
   yunpianCodes.remove({mobile: phone});
@@ -62,7 +63,7 @@ Accounts.yunpian.sendVerificationCode = function (phone) {
 
   Accounts.yunpian.client.sendSMS({
     mobile: phone,
-    text: '您的验证码是'+ code +'。如非本人操作，请忽略本短信'
+    tpl_value:encodeURI("#code#")+"="+encodeURI(code)
   },function(err,res){
     //if(err) throw new Meteor.Error('no send sms');
   });

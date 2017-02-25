@@ -12,7 +12,8 @@ Allow users to login with their phone number smsgateway https://www.yunpian.com.
 // Configure to use yunpian.
 Accounts.yunpian.configure({
   yunpian: {
-    apikey: "************",
+    apikey: "************", //required
+    tpl_id: "12345678", //required "你的验证码#code#"
   }
 });
 ```
