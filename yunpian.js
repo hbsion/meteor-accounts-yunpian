@@ -50,7 +50,7 @@ Yunpian.prototype.sendMessage = function (options, callback) {
 	}
 
 	HTTP.post('https://sms.yunpian.com/v2/sms/single_send.json', {
-		params: _.pick(options,'mobile','text','apikey')
+		data: _.pick(options,'mobile','text','apikey')
 	}, function (error, response) {
 		if (error) {
 			callback(error);

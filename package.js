@@ -1,6 +1,6 @@
 Package.describe({
   name: 'hbsion:accounts-yunpian',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Allow users to login with yunpian send sms to phone number.',
   git: 'https://github.com/hbsion/meteor-accounts-yunpian.git'
 });
